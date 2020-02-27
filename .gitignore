@@ -1,0 +1,8 @@
+# Environment
+.env
+
+# Dependency directories
+node_modules/
+
+# Generated output
+output/
