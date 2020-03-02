@@ -3,7 +3,7 @@ import { introspectionQuery } from 'graphql'
 
 require('dotenv').config()
 
-const { ID_TOKEN } = process.env
+const { BEARER_TOKEN } = process.env
 
 /**
  * Runs an introspection query and writes the result to `introspection.json`
@@ -13,8 +13,8 @@ function introspect (apiUrl) {
     'Content-Type': 'application/json'
   }
 
-  if (ID_TOKEN) {
-    headers.Authorization = `Bearer ${ID_TOKEN}`
+  if (BEARER_TOKEN) {
+    headers.Authorization = `Bearer ${BEARER_TOKEN}`
   } else {
     console.log('No ID_TOKEN detected. To make authenticated introspection queries please provide an ID_TOKEN.')
   }
@@ -23,6 +23,7 @@ function introspect (apiUrl) {
     headers,
     method: 'POST',
     body: JSON.stringify({ query: introspectionQuery }),
+    timeout: 2000,
   })
     .then(res => res.json())
     .then(res => {

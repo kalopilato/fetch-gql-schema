@@ -1,10 +1,10 @@
 {
-  "name": "schemamatica",
+  "name": "fetch-gql-schema",
   "version": "1.0.0",
   "description": "A simple CLI to introspect a GraphQL API and write its schema to a file.",
   "main": "src/cli.js",
   "bin": {
-    "schemamatica": "bin/schemamatica"
+    "fetch-gql-schema": "bin/fetch-gql-schema"
   },
   "publishConfig": {
     "access": "public"
@@ -22,10 +22,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^3.0.0",
-    "clear": "^0.1.0",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
-    "figlet": "^1.3.0",
     "graphql": "^14.6.0",
     "is-valid-path": "^0.1.1",
     "node-fetch": "^2.6.0",

@@ -1,9 +1,13 @@
-import { ensureDirSync } from '../utils/ensureDirSync'
 import path from 'path'
 import fs from 'fs'
 
 function writeFile (data, filePath) {
-  ensureDirSync(path.dirname(filePath))
+  try {
+    fs.mkdirSync(path.dirname(filePath), { recursive: true })
+  } catch (err) {
+    if (err.code !== 'EEXIST') throw err
+  }
+
   fs.writeFileSync(filePath, data)
 }
 
