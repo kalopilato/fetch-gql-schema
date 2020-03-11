@@ -11,6 +11,8 @@
   },
   "scripts": {
     "lint": "standard --verbose | snazzy",
+    "test": "jest -c ./jest.config.js",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [
     "graphql",
@@ -31,8 +33,11 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-watch-typeahead": "^0.4.2",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1"
+  },
   "standard": {
     "envs": [
       "jest"
