@@ -23,7 +23,7 @@ function introspect (apiUrl) {
     headers,
     method: 'POST',
     body: JSON.stringify({ query: introspectionQuery }),
-    timeout: 2000,
+    timeout: 2000
   })
     .then(res => res.json())
     .then(res => {

@@ -10,7 +10,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard --verbose | snazzy",
   },
   "keywords": [
     "graphql",
@@ -31,6 +31,17 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
+    "snazzy": "^8.0.0",
     "standard": "^14.3.1"
+  "standard": {
+    "envs": [
+      "jest"
+    ],
+    "ignore": [
+      "node_modules/**"
+    ],
+    "validate": [
+      "javascript"
+    ]
   }
 }
